@@ -9,16 +9,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const constants_1 = require("./constants");
 const core_1 = require("@mikro-orm/core");
-const posts_1 = require("./entities/posts");
 const Main = () => __awaiter(void 0, void 0, void 0, function* () {
-    const Orm = yield core_1.MikroORM.init({
-        entities: [posts_1.Post],
-        dbName: "reddit-clone",
-        type: "postgresql",
-        debug: !constants_1.__prod__,
-    });
+    const Orm = yield core_1.MikroORM.init();
 });
 Main().catch((reason) => {
     console.error(reason);
