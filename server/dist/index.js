@@ -8,10 +8,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@mikro-orm/core");
+const mikro_orm_config_1 = __importDefault(require("./mikro-orm.config"));
 const Main = () => __awaiter(void 0, void 0, void 0, function* () {
-    const Orm = yield core_1.MikroORM.init();
+    const Orm = yield core_1.MikroORM.init(mikro_orm_config_1.default);
 });
 Main().catch((reason) => {
     console.error(reason);
